@@ -1,0 +1,66 @@
+# macOS / system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editors / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Generic build directories
+build/
+Build/
+cmake-build-*/
+out/
+bin/
+obj/
+objs/
+dist/
+
+# C/C++ compilation artifacts
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.i*
+*.ii
+*.s
+*.dSYM/
+
+# Debug / profiling
+*.gcno
+*.gcda
+*.gcov
+*.prof
+*.profraw
+*.profdata
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+
+# Make dependency files
+makedep*
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
