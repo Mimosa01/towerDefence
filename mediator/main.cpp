@@ -4,7 +4,7 @@
 #include "achievementSystem.h"
 #include "questSystem.h"
 #include "uiSystem.h"
-#include "playerSystem.h"
+#include "playersystem.h"
 
 int main() {
   EventBus bus;
@@ -13,7 +13,7 @@ int main() {
   AchievementSystem achievementSystem(bus);
   QuestSystem questSystem(bus);
   UISystem uiSystem(bus);
-  PlayerSystem playerSystem(bus)
+  PlayerSystem playerSystem(bus);
 
   std::cout << "🎮 Игровая сессия\n" << std::string(40, '=') << "\n";
 

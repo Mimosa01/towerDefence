@@ -4,7 +4,7 @@
 #include "coord.h"
 
 struct TowerPlacedEvent {
-  Coord c;
+  Coord position;
   std::string type;
   int cost;
 };
@@ -21,4 +21,4 @@ struct EnemyKilledEvent {
 
 struct BossApearedEvent {};
 
-struct WaveCompletedEvent { int wave_num; }
+struct WaveCompletedEvent { int wave_num; };
