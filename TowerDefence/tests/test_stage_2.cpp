@@ -1,7 +1,7 @@
-#include "towers/base_tower.h"
-#include "towers/poison_decorator.h"
-#include "towers/range_boost_decorator.h"
-#include "towers/boss_debuff_decorator.h"
+#include "../src/towers/BaseTower.h"
+#include "../src/towers/PoisonDecorator.h"
+#include "../src/towers/RangeDecorator.h"
+#include "../src/towers/BossBoostDecorator.h"
 #include <iostream>
 #include <cassert>
 #include <memory>
@@ -19,7 +19,7 @@ void test_decorator_chaining() {
     assert(poisoned->get_range() == 3);
     assert(poisoned->describe() == "FireTower + Poison");
 
-    auto boosted = std::make_shared<RangeBoostDecorator>(poisoned);
+    auto boosted = std::make_shared<RangeDecorator>(poisoned);
     assert(boosted->get_damage() == 25);
     assert(boosted->get_range() == 5);   // 3 + 2
     assert(boosted->describe() == "FireTower + Poison + RangeBoost");
@@ -32,7 +32,7 @@ void test_boss_debuff_dynamic() {
     auto base = std::make_shared<BaseTower>("ArcticTower", 10, 4, 80);
     
     // Симуляция реакции TowerManager на BossAppearedEvent
-    auto boss_wrapped = std::make_shared<BossDebuffDecorator>(base);
+    auto boss_wrapped = std::make_shared<BossBoostDecorator>(base);
     
     assert(boss_wrapped->get_damage() == 20); // 10 * 2
     assert(boss_wrapped->describe() == "ArcticTower [BOSS-DEBUFF]");
